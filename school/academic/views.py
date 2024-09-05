@@ -15,3 +15,4 @@ class SectionListView(ListView):
     model = Section
     template_name = 'section_list.html'  
     context_object_name = 'sections'
+    
