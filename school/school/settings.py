@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'academic',
+    'process_st_attendance_daily',
 ]
 
 MIDDLEWARE = [
