@@ -1,18 +1,19 @@
 from django.views.generic import ListView
-from .models import Session, Version, Section
+from .models import Session, Version, Section, Subject
 
 class SessionListView(ListView):
     model = Session
-    template_name = 'session_list.html'
     context_object_name = 'sessions'
 
 class VersionListView(ListView):
     model = Version
-    template_name = 'version_list.html'
     context_object_name = 'versions'
 
 class SectionListView(ListView):
     model = Section
-    template_name = 'section_list.html'  
     context_object_name = 'sections'
-    
+
+class SubjectListView(ListView):
+    model = Subject
+    context_object_name = 'subjects'
+    template_name = 'subjects_list.html'

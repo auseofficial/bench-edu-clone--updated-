@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Session, Version, Section
+from .models import Session, Version, Section, Subject
 
 @admin.register(Session)
 class SessionAdmin(admin.ModelAdmin):
@@ -23,6 +23,12 @@ class VersionAdmin(admin.ModelAdmin):
 
 @admin.register(Section)
 class SectionAdmin(admin.ModelAdmin):
+    list_display = ('section_code', 'section', 'institution', 'branch', 'status', 'created_at')
+    search_fields = ('section_code', 'section', 'institution', 'branch')
+    list_filter = ('status', 'created_at')
+
+@admin.register(Subject)
+class SubjectAdmin(admin.ModelAdmin):
     list_display = ('section_code', 'section', 'institution', 'branch', 'status', 'created_at')
     search_fields = ('section_code', 'section', 'institution', 'branch')
     list_filter = ('status', 'created_at')
